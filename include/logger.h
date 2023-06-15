@@ -9,7 +9,6 @@
 #include <filesystem>
 #include <cstdio>
 #include <vector>
-#include <cuchar>
 #include <algorithm>
 
 void logToFile(const std::string& message);
