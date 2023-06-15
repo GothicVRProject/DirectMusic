@@ -8,7 +8,6 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
-#include <cuchar>
 #include <chrono>
 #include <ctime>
 #include <algorithm>
