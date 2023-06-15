@@ -135,12 +135,14 @@ std::ifstream DirectMusic::implCustomOpen(std::string file) noexcept(false)
   for (auto &i : path)
   {
     std::string filepath = "";
-    if (std::filesystem::exists(i + "\\" + file))
-      filepath = i + "\\" + file;
-    ifs.open(filepath, std::ios::binary);
-    if (ifs.is_open())
+    filepath = (std::filesystem::path(i) / file).string();
+    if (std::filesystem::exists(filepath))
     {
-      return ifs;
+      ifs.open(filepath, std::ios::binary);
+      if (ifs.is_open())
+      {
+        return ifs;
+      }
     }
   }
 }
